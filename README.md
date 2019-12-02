@@ -41,7 +41,12 @@ _<b>Attention:</b> If you add the same property to the root project file and to 
 * <b>mavSiteUrl</b> _-> String property -> Identify the url of the project website_
 * <b>mavGitUrl</b> _-> String property ->Identify the url of the project github page_
 
-### <a name="repositories"/>2. Repositories
+### <a name="dependecy's coordinate"/>2. dependecy's coordinate
+* <b>mavArtifactId</b> _-> String property ->Identify the artifactId of the dependecy_
+* <b>mavGroupId</b> _-> String property ->Identify the groupId of the dependecy_
+* <b>mavVersion</b> _-> String property ->Identify the mavVersion of the dependecy_
+
+### <a name="repositories"/>3. Repositories
 
 * Remote repository:
     * <b>mavPublishToRemoteRepo</b> _-> Boolean property -> Allow the script to load your library to a remote repo_
@@ -62,10 +67,14 @@ _<b>Attention:</b> If you won't set any repository automatically the script will
 
 ```
 project.ext {
+    mavPubishConfigFilePath="../publish"
     mavDevelopers = ["Fe":"Federico"]
     mavSiteUrl = "https://github.com/sky-uk/gradle-maven-plugin"
     mavGitUrl = mavSiteUrl + '.git'
     mavProjectName = 'GradleMavenizer'
+    mavGroupId="com.group.id"
+    mavArtifactId="artifactId"
+    mavVersion="1.0.0"
     mavPublishToInternalRepo = true
     mavRepoInternalUrl = "path/to/internal/repo"
     mavLibraryLicenses = ["Apache-2.0":'http://www.apache.org/licenses/LICENSE-2.0.txt']
